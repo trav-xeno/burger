@@ -1,9 +1,14 @@
 const { Router } = require("express");
-const db = require("../model/burger.js");
-
+const db = require("../models");
+/*
+  "username": "root",
+  "password": null,
+  "database": "database_production",
+  "host": "127.0.0.1",
+*/
 const router = Router();
 
-db.sync({ force: true }).then(() => {
+db.Burger.sync({ force: true }).then(() => {
   // Now the table in the database corresponds to the model definition
   return db.bulkCreate([
     {
@@ -32,7 +37,7 @@ db.sync({ force: true }).then(() => {
 router.post("/api/eat", function(req, res) {
   console.log("-------------------");
   console.log(req.body.meal);
-  db.create({
+  db.Burger.create({
     burger_name: req.body.meal,
     devoured: false
   }).then(result => {
@@ -49,7 +54,7 @@ router.put("/api/devour/:id", function({ params }, res) {
 
   console.log("id", id);
   console.log(typeof id);
-  db.update(
+  db.Burger.update(
     { devoured: true },
     {
       where: {
@@ -62,7 +67,7 @@ router.put("/api/devour/:id", function({ params }, res) {
 });
 
 router.get("/", function(req, res) {
-  db.findAll({
+  db.Burger.findAll({
     order: [["id", "DESC"]]
   }).then(dbGet => {
     //res.json(dbPost);
