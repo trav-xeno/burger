@@ -23,6 +23,9 @@ $(function() {
     event.preventDefault();
     let val = patty.val();
     console.log(val);
+    if (val === "") {
+      return;
+    }
     let burger = {
       meal: val
     };

@@ -10,7 +10,7 @@ const router = Router();
 
 db.Burger.sync({ force: true }).then(() => {
   // Now the table in the database corresponds to the model definition
-  return db.bulkCreate([
+  return db.Burger.bulkCreate([
     {
       burger_name: "kraby Patty Deluxe",
       devoured: false
