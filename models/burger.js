@@ -1,10 +1,27 @@
-const Sequelize = require("sequelize");
 /*
 id: an auto incrementing int that serves as the primary key.
 burger_name: a string.
 devoured: a boolean.
 */
+module.exports = function(sequelize, DataTypes) {
+  const Buger = sequelize.define("Burger", {
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: 0
+    }
+  });
+  return Buger;
+};
 
+/*
 const Model = Sequelize.Model;
 class Burger extends Model {}
 Burger.init(
@@ -21,12 +38,12 @@ Burger.init(
     }
   },
   {
-    sequelize,
+    Sequelize,
     modelName: "burger"
     // options
   }
 );
-module.exports = Burger;
+module.exports = Burger; */
 //------------------------------------------------------
 
 //-------------------------------------

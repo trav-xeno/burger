@@ -1,6 +1,6 @@
 const exp = require("express");
 const route = require("./routes/route.js");
-const db = require("./model/burger");
+const db = require("./models");
 const PORT = process.env.PORT || 8080;
 const app = exp();
 
