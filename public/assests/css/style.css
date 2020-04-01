@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.white {
+  color: #fff;
+}
+.blue {
+  color: #072763;
+}
+.margint {
+  margin-top: 25px;
+}
+.bg {
+  background-color: darkslategray;
+  opacity: 0.5;
+}
+.btn {
+  background: none;
+  border: 1px solid #072763;
+  border-radius: 12px;
+  color: #072763;
+}
+.btn:hover {
+  color: #fff;
+  transition: ease-in 0.33;
+  background-color: #072763 !important;
+}

@@ -1,0 +1,19 @@
+<li>
+
+	<div class="row">
+		<div class="col-9">
+			{{burger_name}}
+		</div>
+
+		{{#unless devoured}}
+		<div class="col-3">
+			<button class="btn " data-id="{{id}}" data-dev="{{devoured}}">
+				Devour!
+			</button>
+		</div>
+		{{/unless}}
+		{{#if devouted}}
+		<div class=" col-3"> yummmm </div>
+		{{/if}}
+	</div>
+</li>

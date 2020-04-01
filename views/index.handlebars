@@ -1,0 +1,59 @@
+<main>
+  <div class="row bg white">
+    <h1 class="col-12 text-center">Crusty Crabby!</h1>
+    <h6 class="col-12 text-center">totally not a knock off</h6>
+  </div>
+  <section class="row blue">
+    <div class="col-sm-12 col-md-4">
+      <h2 class="col-12 ">What would you like?</h2>
+      <form class="col-12 ">
+        <div class="form-group">
+          <label for="patty">Meal Name:</label>
+          <input type="text" id="patty" name="name">
+        </div>
+
+        <button class="btn" type="submit">Add Meal</button>
+      </form>
+    </div>
+    <div class="col-sm-12 col-md-4 margint">
+      <p class="col-12">We have highly skilled personel!</p>
+      <img src="/assests/css/staff.jpg" width="400px" height="288px" />
+
+    </div>
+    <div class="col-sm-12 col-md-4 margint">
+      <p class="col-12">I am sure your order will be filled eventually...maybe</p>
+      <img src="/assests/css/robotstaff.jpg" />
+    </div>
+  </section>
+
+  <div class="row bg white margint">
+    <section class="col-sm-12 col-md-6">
+      <div class="row">
+        <h2 class="col-12 text-center">Ordered Meals</h2>
+      </div>
+      <div class="row">
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burger/burger-block  }}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+    <section class="col-sm-12 col-md-6">
+      <div class="row">
+        <h2 class="col-12 text-center">Devoured Crabby Patties!</h2>
+      </div>
+      <div class="row">
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burger/burger-block devoured=true}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
