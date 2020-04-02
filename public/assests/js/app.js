@@ -1,9 +1,11 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
   const patty = $("#patty");
-
   $("button").on("click", function(event) {
     let id = $(this).data("id");
+    if (this.id === "add") {
+      return;
+    }
     let devour = {
       devoured: true
     };
